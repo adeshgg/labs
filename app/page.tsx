@@ -6,22 +6,22 @@ const items = [
   {
     name: 'Voice Note',
     icon: <Mic className="h-8 w-8" />,
-    href: '/ui/voice-note',
+    href: '/voice-note',
   },
   {
     name: 'Reveal n Copy',
     icon: <Copy className="h-8 w-8" />,
-    href: '/ui/reveal-copy',
+    href: '/reveal-copy',
   },
   {
     name: 'Extended Toolbar',
     icon: <Wrench className="h-8 w-8" />,
-    href: '/ui/extended-toolbar',
+    href: '/extended-toolbar',
   },
   {
     name: 'Collectibles',
     icon: <Bitcoin className="h-8 w-8" />,
-    href: '/ui/collectibles',
+    href: '/collectibles',
   },
 ]
 
