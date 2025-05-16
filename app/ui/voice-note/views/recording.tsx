@@ -13,18 +13,16 @@ function Recording({
   const strokeWidth = 7
   const buttonWidth = 108
   const buttonHeight = 64
-  const parentPadding = 16 // Assuming 1rem = 16px for p-4
+  const parentPadding = 16
 
   const svgWidth = buttonWidth + strokeWidth
   const svgHeight = buttonHeight + strokeWidth
   const svgTop = parentPadding - strokeWidth / 2
   const svgLeft = parentPadding - strokeWidth / 2
 
-  // Path 'd' attribute calculation
   const pathInset = strokeWidth / 2
-  const pillCurveRadius = buttonHeight / 2 // Radius of the pill's curvature
+  const pillCurveRadius = buttonHeight / 2
 
-  // Define key points for the path centerline
   const CR_pt_x = svgWidth - pathInset
   const CR_pt_y = svgHeight / 2
 
@@ -40,9 +38,6 @@ function Recording({
   const TR_pt_x = svgWidth - pathInset - pillCurveRadius
   const TR_pt_y = pathInset
 
-  // Construct the path string starting from CR_pt (Center Right)
-  // All arcs are drawn clockwise (sweep-flag = 1)
-  // large-arc-flag = 0 for quarter and semi-circles
   const pathD = `
     M ${CR_pt_x} ${CR_pt_y}
     A ${pillCurveRadius} ${pillCurveRadius} 0 0 1 ${BR_pt_x} ${BR_pt_y}
@@ -53,7 +48,7 @@ function Recording({
     Z
   `
     .replace(/\s+/g, ' ')
-    .trim() // Minify the path string
+    .trim()
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -80,7 +75,6 @@ function Recording({
           transition={{
             type: 'tween',
             duration: 2,
-            // delay: 1,
             ease: 'easeInOut',
             repeat: Infinity,
           }}
@@ -92,7 +86,6 @@ function Recording({
           }px] items-center justify-center gap-1`}
         >
           {' '}
-          {/* Content area width */}
           {waves.map((wave, i) => (
             <motion.div
               className="w-[5.5px] rounded-full bg-red-500"
@@ -110,7 +103,6 @@ function Recording({
           ))}
         </div>
       </button>
-      {/* SVG for the animated pill-shaped border OUTSIDE the button */}
       <svg
         className="pointer-events-none absolute text-red-500"
         style={{
@@ -125,7 +117,7 @@ function Recording({
         aria-hidden="true"
       >
         <motion.path
-          d={pathD} // Use the new path definition
+          d={pathD}
           stroke="currentColor"
           strokeWidth={strokeWidth}
           vectorEffect="non-scaling-stroke"

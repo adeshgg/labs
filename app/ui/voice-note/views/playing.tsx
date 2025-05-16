@@ -22,7 +22,6 @@ const Playing = ({
   }, [])
 
   useEffect(() => {
-    // Let the zero animate in
     if (localCount < 0) {
       setView('recorded')
     }
