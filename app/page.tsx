@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { Copy, Mic } from 'lucide-react'
+import { Copy, Mic, Wrench } from 'lucide-react'
 import Link from 'next/link'
 
 const items = [
@@ -12,6 +12,11 @@ const items = [
     name: 'Reveal n Copy',
     icon: <Copy className="h-8 w-8" />,
     href: '/ui/reveal-copy',
+  },
+  {
+    name: 'Extended Toolbar',
+    icon: <Wrench className="h-8 w-8" />,
+    href: '/ui/extended-toolbar',
   },
 ]
 
