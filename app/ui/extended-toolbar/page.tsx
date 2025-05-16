@@ -14,7 +14,6 @@ import {
 } from 'lucide-react'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { div } from 'motion/react-client'
 
 const iconsClasses = 'md:h-10 md:w-10 text-zinc-800'
 
