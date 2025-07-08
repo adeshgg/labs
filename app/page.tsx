@@ -1,27 +1,32 @@
-import { Button } from '@/components/ui/button'
-import { Bitcoin, Copy, Mic, Wrench } from 'lucide-react'
-import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { Bitcoin, CircleGauge, Copy, Mic, Wrench } from "lucide-react"
+import Link from "next/link"
 
 const items = [
   {
-    name: 'Voice Note',
+    name: "Dial",
+    icon: <CircleGauge className="h-8 w-8" />,
+    href: "/dial",
+  },
+  {
+    name: "Voice Note",
     icon: <Mic className="h-8 w-8" />,
-    href: '/voice-note',
+    href: "/voice-note",
   },
   {
-    name: 'Reveal n Copy',
+    name: "Reveal n Copy",
     icon: <Copy className="h-8 w-8" />,
-    href: '/reveal-copy',
+    href: "/reveal-copy",
   },
   {
-    name: 'Extended Toolbar',
+    name: "Extended Toolbar",
     icon: <Wrench className="h-8 w-8" />,
-    href: '/extended-toolbar',
+    href: "/extended-toolbar",
   },
   {
-    name: 'Collectibles',
+    name: "Collectibles",
     icon: <Bitcoin className="h-8 w-8" />,
-    href: '/collectibles',
+    href: "/collectibles",
   },
 ]
 
@@ -33,8 +38,8 @@ export default function Home() {
           <Button
             key={item.name}
             asChild
-            variant={'outline'}
-            size={'lg'}
+            variant={"outline"}
+            size={"lg"}
             className="flex gap-2"
           >
             <Link href={item.href}>
